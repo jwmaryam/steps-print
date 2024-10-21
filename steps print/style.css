@@ -1,0 +1,55 @@
+*{
+    padding: 0;
+    margin: 0; 
+    box-sizing: border-box;
+
+
+}
+body{
+    display:flex;
+    position:relative;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    background-color: #222;
+
+}
+.container {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: animate 10s steps(10) infinite;
+}
+
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg)
+    }
+}
+.container .circle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+}
+.container .circle::before {
+    content: '\f54b';
+    position: absolute;
+    font-family: fontAwesome;
+    font-size: 3em;
+    color: #444;
+    rotate: 90deg;
+
+
+   
+}
+.container .circle:nth-child(1)::before{
+    color: #fff;
+    text-shadow: 0 0 15px #fff, 0 0 55px #fff, 0 0 180px #fff;
+}
